@@ -33,9 +33,10 @@ main {
 }
 .element {
   color: white;
-  padding: 7px 10px;
+  padding: 7px 0px;
   border-top: 1px solid #727a85;
   font-size: 12px;
+  cursor: pointer;
 }
 .application {
   width: calc(100% - 230px);
@@ -63,6 +64,7 @@ main {
   border-radius: 5px;
   font-weight: bold;
   display: block;
+  cursor: pointer;
 }
 .panel {
   background-color: white;
@@ -127,4 +129,11 @@ main {
 .div-table::-webkit-scrollbar-thumb {
   background-color: #1d89e4;
   margin-right: 5px;
+}
+.icon {
+  border-radius: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin: 0px 5px;
+  cursor: pointer;
 }
