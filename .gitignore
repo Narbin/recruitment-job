@@ -1,0 +1,10 @@
+*~
+node_modules/
+.eslint*
+.sublime*
+gulpfile*
+package.json
+tests/lib/
+tests/MIT.LICENSE
+tests/specRunner.html
+sublime-gulp.log
