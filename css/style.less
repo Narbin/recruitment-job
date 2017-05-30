@@ -1,12 +1,20 @@
 @background-menu-color: #282b30;
 @light-gray: #727a85;
+@blue: #1d89e4;
+@app-background: #eeeeee;
+@bold-text: #3f444a;
 
 html, 
 body,
 main {
-    height: 100%;
+	height: 100%;
 	margin: 0px;
 	font-family: sans-serif;
+}
+
+.bold-text {
+    font-weight: bold;
+    color: @bold-text;
 }
 
 .left-menu {
@@ -14,6 +22,7 @@ main {
 	width: 230px;
 	padding-top: 10px;
 	min-height: 100%;
+	float: left;
 }
 
 .logo {
@@ -35,4 +44,71 @@ main {
     padding: 7px 10px;
     border-top: 1px solid @light-gray;
     font-size: 12px;
+}
+
+.application {
+	width: ~"calc(100% - 230px)";
+	float: right;
+	background-color: @app-background;
+	min-height: 100%;
+}
+
+.top-bar {
+	padding: 10px;
+    border-bottom: 1px solid @light-gray;
+    box-shadow: 0px 0px 1px @light-gray;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    span {
+    	text-transform: uppercase;
+    	margin: auto 0px;
+    	&:extend(.bold-text);
+    }
+}
+
+.button {
+	background-color: @blue;
+    color: white;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: block;
+}
+
+.panel {
+    background-color: white;
+    height: 20px;
+    margin: 10px;
+    box-shadow: lightgrey 1px 1px 1px;
+    border-radius: 5px;
+    padding: 10px;
+    height: 100%;
+    .panel-heading {
+    	margin: 5px 5px 30px;
+    	&:extend(.bold-text);
+    }
+
+    .inputs-holder {
+    	display: inline-flex;
+    	flex-wrap: wrap;
+    }
+
+    input {
+    	padding: 10px;
+	    border-radius: 3px;
+	    border: lightgray 1px solid;
+	    margin: 5px;
+	    width: 250px;
+    }
+
+    label {
+    	flex: 0 0 35%;
+    }
+
+    .button {
+    	margin-left: 85px;
+    	margin-top: 5px;
+    }
 }
