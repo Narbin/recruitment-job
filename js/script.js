@@ -44,6 +44,11 @@ Table.prototype.AddNewLineDOM = function (_line) {
 		var newText = document.createTextNode(_line.cells[i].content);
 		newCell.appendChild(newText);
 	}
+
+	binIcon.onclick = function () {
+		this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+		app.table.lines.splice(app.table.lines.indexOf(_line), 1);
+	};
 	
 	cellForIcons.appendChild(pencilIcon);
 	cellForIcons.appendChild(binIcon);
