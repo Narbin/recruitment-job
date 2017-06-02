@@ -32,12 +32,14 @@ Table.prototype.AddNewLineDOM = function (_line) {
 	var pencilIcon = document.createElement('img');
 	pencilIcon.className = 'icon';
 	pencilIcon.src = 'icons/pencil.svg';
-	pencilIcon.id = 'line' + _line.id;
 
 	var binIcon = document.createElement('img');
 	binIcon.className = 'icon';
 	binIcon.src = 'icons/trash-can.svg';
-	binIcon.id = 'line' + _line.id;
+
+	var saveIcon = document.createElement('img');
+	saveIcon.className = 'icon hide';
+	saveIcon.src = 'icons/save.svg';
 
 	for (var i = 0; i < _line.cells.length; i++) {
 		var newCell = newRow.insertCell(i);
@@ -45,12 +47,41 @@ Table.prototype.AddNewLineDOM = function (_line) {
 		newCell.appendChild(newText);
 	}
 
+	saveIcon.onclick = function () {
+		var cell = this.parentNode.parentNode;
+
+		for (var i = 0; i < cell.childNodes.length - 1; i++) {
+			var text = document.createTextNode(cell.childNodes[i].childNodes[0].value);
+			cell.childNodes[i].replaceChild(text, cell.childNodes[i].childNodes[0]);
+		}
+
+		this.classList.toggle('hide');
+		this.parentNode.childNodes[0].classList.toggle('hide');
+	};
+
+	pencilIcon.onclick = function () {
+		var cell = this.parentNode.parentNode;
+
+		for (var i = 0; i < cell.childNodes.length - 1; i++) {
+			var input = document.createElement('input');
+			input.type = 'text';
+			input.value = cell.childNodes[i].textContent;
+
+			cell.childNodes[i].textContent = '';
+			cell.childNodes[i].appendChild(input);
+		}
+
+		this.classList.toggle('hide');
+		this.parentNode.childNodes[1].classList.toggle('hide');
+	};
+
 	binIcon.onclick = function () {
 		this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
 		app.table.lines.splice(app.table.lines.indexOf(_line), 1);
 	};
 	
 	cellForIcons.appendChild(pencilIcon);
+	cellForIcons.appendChild(saveIcon);
 	cellForIcons.appendChild(binIcon);
 };
 

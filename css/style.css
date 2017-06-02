@@ -82,14 +82,14 @@ main {
   display: inline-flex;
   flex-wrap: wrap;
 }
-.panel input {
+.panel .inputs-holder input {
   padding: 10px;
   border-radius: 3px;
   border: lightgray 1px solid;
   margin: 5px;
   width: 250px;
 }
-.panel label {
+.panel .inputs-holder label {
   flex: 0 0 35%;
 }
 .panel .button {
@@ -120,6 +120,13 @@ main {
   padding: 15px;
   color: #9b9b9b;
 }
+.div-table table td input {
+  padding: 10px;
+  border-radius: 3px;
+  border: lightgray 1px solid;
+  box-sizing: border-box;
+  width: 100%;
+}
 .div-table table tr:hover {
   background-color: #d2e7fa;
 }
@@ -136,4 +143,7 @@ main {
   vertical-align: middle;
   margin: 0px 5px;
   cursor: pointer;
+}
+.hide {
+  display: none;
 }

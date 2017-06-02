@@ -95,18 +95,18 @@ main {
     .inputs-holder {
     	display: inline-flex;
     	flex-wrap: wrap;
-    }
 
-    input {
-    	padding: 10px;
-	    border-radius: 3px;
-	    border: lightgray 1px solid;
-	    margin: 5px;
-	    width: 250px;
-    }
+    	input {
+    		padding: 10px;
+    		border-radius: 3px;
+    		border: lightgray 1px solid;
+    		margin: 5px;
+    		width: 250px;
+    	}
 
-    label {
-    	flex: 0 0 35%;
+    	label {
+    		flex: 0 0 35%;
+    	}
     }
 
     .button {
@@ -126,6 +126,7 @@ main {
     table {
     	border-collapse: collapse;
     	width: 100%;
+
 		th {
 			background-color: @blue;
 			color: white;
@@ -135,8 +136,16 @@ main {
 		}
 		td {
 			border-bottom: lightgray 1px solid;
-			padding: 15px;
+			padding: 5px;
 			color: #9b9b9b;
+
+			input {
+				padding: 10px;
+				border-radius: 3px;
+				border: lightgray 1px solid;
+				box-sizing: border-box;
+				width: 100%;
+			}
 		}
 		tr:hover {
 			background-color: #d2e7fa;
@@ -159,4 +168,8 @@ main {
 	vertical-align: middle;
 	margin: 0px 5px;
 	cursor: pointer;
+}
+
+.hide {
+	display: none;
 }
