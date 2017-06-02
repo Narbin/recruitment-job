@@ -18,10 +18,6 @@ function Table() {
 	this.lines = [ ];
 }
 
-Table.prototype.addNewLine = function (_line) {
-	this.lines.push(_line);
-};
-
 Table.prototype.addNewLineDOM = function (_line) {
 	
 	var table = document.getElementById('appTable').getElementsByTagName('tbody')[0],
