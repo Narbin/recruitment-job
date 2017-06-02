@@ -1,8 +1,11 @@
 @background-menu-color: #282b30;
-@light-gray: #727a85;
+@darker-gray: #727a85;
 @blue: #1d89e4;
 @app-background: #eeeeee;
 @bold-text: #3f444a;
+@light-gray: lightgrey;
+@table-hover: #d2e7fa;
+@dark-gray: #9b9b9b;
 
 html, 
 body,
@@ -32,9 +35,9 @@ main {
 	width: 100px;
 	height: 100px;
 	line-height: 100px;
-	border: 1px solid @light-gray;
+	border: 1px solid @darker-gray;
 	border-radius: 50px;
-	color: @light-gray;
+	color: @darker-gray;
 	text-transform: uppercase;
 	font-weight: bold;
 }
@@ -42,7 +45,7 @@ main {
 .element {
 	color: white;
 	padding: 7px 0px;
-	border-top: 1px solid @light-gray;
+	border-top: 1px solid @darker-gray;
 	font-size: 12px;
 	cursor: pointer;
 }
@@ -56,8 +59,8 @@ main {
 
 .top-bar {
 	padding: 10px;
-	border-bottom: 1px solid @light-gray;
-	box-shadow: 0px 0px 1px @light-gray;
+	border-bottom: 1px solid @darker-gray;
+	box-shadow: 0px 0px 1px @darker-gray;
 	display: flex;
 	justify-content: space-between;
 	background-color: white;
@@ -83,7 +86,7 @@ main {
 	background-color: white;
 	height: 20px;
 	margin: 10px;
-	box-shadow: lightgrey 1px 1px 1px;
+	box-shadow: @light-gray 1px 1px 1px;
 	border-radius: 5px;
 	padding: 17px;
 	height: 100%;
@@ -99,7 +102,7 @@ main {
 		input {
 			padding: 10px;
 			border-radius: 3px;
-			border: lightgray 1px solid;
+			border: @light-gray 1px solid;
 			margin: 5px;
 			width: 250px;
 		}
@@ -137,9 +140,9 @@ main {
 			width: 200px;
 		}
 		td {
-			border-bottom: lightgray 1px solid;
+			border-bottom: @light-gray 1px solid;
 			padding: 5px;
-			color: #9b9b9b;
+			color: @dark-gray;
 
 			div {
 				padding: 10px;
@@ -151,13 +154,14 @@ main {
 			input {
 				padding: 10px;
 				border-radius: 3px;
-				border: lightgray 1px solid;
+				border: @light-gray 1px solid;
 				box-sizing: border-box;
 				width: 100%;
+				color: @dark-gray;
 			}
 		}
 		tr:hover {
-			background-color: #d2e7fa;
+			background-color: @table-hover;
 		}
 	}
 }

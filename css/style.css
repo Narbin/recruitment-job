@@ -85,7 +85,7 @@ main {
 .panel .inputs-holder input {
   padding: 10px;
   border-radius: 3px;
-  border: lightgray 1px solid;
+  border: lightgrey 1px solid;
   margin: 5px;
   width: 250px;
 }
@@ -118,7 +118,7 @@ main {
   width: 200px;
 }
 .div-table table td {
-  border-bottom: lightgray 1px solid;
+  border-bottom: lightgrey 1px solid;
   padding: 5px;
   color: #9b9b9b;
 }
@@ -131,9 +131,10 @@ main {
 .div-table table td input {
   padding: 10px;
   border-radius: 3px;
-  border: lightgray 1px solid;
+  border: lightgrey 1px solid;
   box-sizing: border-box;
   width: 100%;
+  color: #9b9b9b;
 }
 .div-table table tr:hover {
   background-color: #d2e7fa;

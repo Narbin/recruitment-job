@@ -11,19 +11,19 @@ document.getElementById('addNewC').addEventListener('click', function () {
 		document.getElementById('column3').value,
 		document.getElementById('column4').value
 		);
-	app.table.AddNewLine(newLine);
-	app.table.AddNewLineDOM(newLine);
+	app.table.addNewLine(newLine);
+	app.table.addNewLineDOM(newLine);
 });
 
 function Table() {
 	this.lines = [ ];
 }
 
-Table.prototype.AddNewLine = function (_line) {
+Table.prototype.addNewLine = function (_line) {
 	this.lines.push(_line);
 };
 
-Table.prototype.AddNewLineDOM = function (_line) {
+Table.prototype.addNewLineDOM = function (_line) {
 	
 	var table = document.getElementById('appTable').getElementsByTagName('tbody')[0],
 		newRow = table.insertRow(table.rows.length),
@@ -90,17 +90,12 @@ Table.prototype.AddNewLineDOM = function (_line) {
 	cellForIcons.appendChild(binIcon);
 };
 
-var Line = (function () {
-	var nextId = 1;
-
-	return function Line() {
-		this.cells = [ ];
-		this.id = nextId++;
-		for (var i = 0; i < arguments.length; i++) {
-			this.cells.push(new Cell(arguments[i]));
-		}
-	};
-})();
+function Line() {
+	this.cells = [ ];
+	for (var i = 0; i < arguments.length; i++) {
+		this.cells.push(new Cell(arguments[i]));
+	}
+}
 
 function Cell(_content) {
 	this.content = _content;
