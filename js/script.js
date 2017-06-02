@@ -11,14 +11,19 @@ document.getElementById('addNewC').addEventListener('click', function () {
 		document.getElementById('column3').value,
 		document.getElementById('column4').value
 		);
-	app.table.addNewLineDOM(newLine);
+	app.table.AddNewLine(newLine);
+	app.table.AddNewLineDOM(newLine);
 });
 
 function Table() {
 	this.lines = [ ];
 }
 
-Table.prototype.addNewLineDOM = function (_line) {
+Table.prototype.AddNewLine = function (_line) {
+	this.lines.push(_line);
+};
+
+Table.prototype.AddNewLineDOM = function (_line) {
 	
 	var table = document.getElementById('appTable').getElementsByTagName('tbody')[0],
 		newRow = table.insertRow(table.rows.length),
