@@ -101,12 +101,13 @@ main {
   border-collapse: collapse;
   text-align: left;
   width: 1100px;
-  overflow: overlay;
   height: 350px;
+  overflow-x: hidden;
+  overflow-y: overlay;
 }
 .div-table table {
   border-collapse: collapse;
-  width: 100%;
+  width: 1200px;
 }
 .div-table table th {
   background-color: #1d89e4;
@@ -114,11 +115,18 @@ main {
   padding: 15px;
   font-weight: normal;
   border-right: 1px solid;
+  width: 200px;
 }
 .div-table table td {
   border-bottom: lightgray 1px solid;
-  padding: 15px;
+  padding: 5px;
   color: #9b9b9b;
+}
+.div-table table td div {
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 15px;
 }
 .div-table table td input {
   padding: 10px;

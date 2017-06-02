@@ -13,8 +13,8 @@ main {
 }
 
 .bold-text {
-    font-weight: bold;
-    color: @bold-text;
+	font-weight: bold;
+	color: @bold-text;
 }
 
 .left-menu {
@@ -27,24 +27,24 @@ main {
 
 .logo {
 	display: block;
-    text-align: center;
-    margin: auto auto 20px;
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
-    border: 1px solid @light-gray;
-    border-radius: 50px;
-    color: @light-gray;
-    text-transform: uppercase;
-    font-weight: bold;
+	text-align: center;
+	margin: auto auto 20px;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	border: 1px solid @light-gray;
+	border-radius: 50px;
+	color: @light-gray;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 
 .element {
 	color: white;
-    padding: 7px 0px;
-    border-top: 1px solid @light-gray;
-    font-size: 12px;
-    cursor: pointer;
+	padding: 7px 0px;
+	border-top: 1px solid @light-gray;
+	font-size: 12px;
+	cursor: pointer;
 }
 
 .application {
@@ -56,76 +56,77 @@ main {
 
 .top-bar {
 	padding: 10px;
-    border-bottom: 1px solid @light-gray;
-    box-shadow: 0px 0px 1px @light-gray;
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
-    span {
-    	text-transform: uppercase;
-    	margin: auto 0px;
-    	&:extend(.bold-text);
-    }
+	border-bottom: 1px solid @light-gray;
+	box-shadow: 0px 0px 1px @light-gray;
+	display: flex;
+	justify-content: space-between;
+	background-color: white;
+	span {
+		text-transform: uppercase;
+		margin: auto 0px;
+		&:extend(.bold-text);
+	}
 }
 
 .button {
 	background-color: @blue;
-    color: white;
-    padding: 7px 12px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    display: block;
-    cursor: pointer;
+	color: white;
+	padding: 7px 12px;
+	border: none;
+	border-radius: 5px;
+	font-weight: bold;
+	display: block;
+	cursor: pointer;
 }
 
 .panel {
-    background-color: white;
-    height: 20px;
-    margin: 10px;
-    box-shadow: lightgrey 1px 1px 1px;
-    border-radius: 5px;
-    padding: 17px;
-    height: 100%;
-    .panel-heading {
-    	margin: 5px 5px 30px;
-    	&:extend(.bold-text);
-    }
+	background-color: white;
+	height: 20px;
+	margin: 10px;
+	box-shadow: lightgrey 1px 1px 1px;
+	border-radius: 5px;
+	padding: 17px;
+	height: 100%;
+	.panel-heading {
+		margin: 5px 5px 30px;
+		&:extend(.bold-text);
+	}
 
-    .inputs-holder {
-    	display: inline-flex;
-    	flex-wrap: wrap;
+	.inputs-holder {
+		display: inline-flex;
+		flex-wrap: wrap;
 
-    	input {
-    		padding: 10px;
-    		border-radius: 3px;
-    		border: lightgray 1px solid;
-    		margin: 5px;
-    		width: 250px;
-    	}
+		input {
+			padding: 10px;
+			border-radius: 3px;
+			border: lightgray 1px solid;
+			margin: 5px;
+			width: 250px;
+		}
 
-    	label {
-    		flex: 0 0 35%;
-    	}
-    }
+		label {
+			flex: 0 0 35%;
+		}
+	}
 
-    .button {
-    	margin-left: 85px;
-    	margin-top: 5px;
-    }
+	.button {
+		margin-left: 85px;
+		margin-top: 5px;
+	}
 }
 
 .div-table {
 	border: solid 1px @blue;
 	border-collapse: collapse;
-    text-align: left;
-    width: 1100px;
-    overflow: overlay;
-    height: 350px;
+	text-align: left;
+	width: 1100px;
+	height: 350px;
+	overflow-x: hidden;
+	overflow-y: overlay;
 
-    table {
-    	border-collapse: collapse;
-    	width: 100%;
+	table {
+		border-collapse: collapse;
+		width: 1200px;
 
 		th {
 			background-color: @blue;
@@ -133,11 +134,19 @@ main {
 			padding: 15px;
 			font-weight: normal;
 			border-right: 1px solid;
+			width: 200px;
 		}
 		td {
 			border-bottom: lightgray 1px solid;
 			padding: 5px;
 			color: #9b9b9b;
+
+			div {
+				padding: 10px;
+				box-sizing: border-box;
+				width: 100%;
+				font-size: 15px;
+			}
 
 			input {
 				padding: 10px;

@@ -42,17 +42,23 @@ Table.prototype.AddNewLineDOM = function (_line) {
 	saveIcon.src = 'icons/save.svg';
 
 	for (var i = 0; i < _line.cells.length; i++) {
-		var newCell = newRow.insertCell(i);
-		var newText = document.createTextNode(_line.cells[i].content);
-		newCell.appendChild(newText);
+		var newCell = newRow.insertCell(i),
+			div = document.createElement('div'),
+			newText = document.createTextNode(_line.cells[i].content);
+		div.appendChild(newText);
+		newCell.appendChild(div);
 	}
 
 	saveIcon.onclick = function () {
 		var cell = this.parentNode.parentNode;
 
 		for (var i = 0; i < cell.childNodes.length - 1; i++) {
-			var text = document.createTextNode(cell.childNodes[i].childNodes[0].value);
-			cell.childNodes[i].replaceChild(text, cell.childNodes[i].childNodes[0]);
+			var text = document.createTextNode(cell.childNodes[i].childNodes[0].value),
+				div = document.createElement('div');
+
+			app.table.lines[app.table.lines.indexOf(_line)].cells[i].content = cell.childNodes[i].childNodes[0].value;
+			div.appendChild(text);
+			cell.childNodes[i].replaceChild(div, cell.childNodes[i].childNodes[0]);
 		}
 
 		this.classList.toggle('hide');
@@ -65,10 +71,9 @@ Table.prototype.AddNewLineDOM = function (_line) {
 		for (var i = 0; i < cell.childNodes.length - 1; i++) {
 			var input = document.createElement('input');
 			input.type = 'text';
-			input.value = cell.childNodes[i].textContent;
+			input.value = cell.childNodes[i].childNodes[0].textContent;
 
-			cell.childNodes[i].textContent = '';
-			cell.childNodes[i].appendChild(input);
+			cell.childNodes[i].replaceChild(input, cell.childNodes[i].childNodes[0]);
 		}
 
 		this.classList.toggle('hide');
