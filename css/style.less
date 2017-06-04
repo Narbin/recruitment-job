@@ -15,6 +15,16 @@ main {
 	font-family: sans-serif;
 }
 
+.animation {
+	transition: all 0.3s ease;
+}
+
+.animation-scale {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
 .bold-text {
 	font-weight: bold;
 	color: @bold-text;
@@ -80,6 +90,11 @@ main {
 	font-weight: bold;
 	display: block;
 	cursor: pointer;
+	&:extend(.animation);
+}
+
+.button:hover {
+	&:extend(.animation-scale);
 }
 
 .panel {
@@ -160,6 +175,11 @@ main {
 				color: @dark-gray;
 			}
 		}
+
+		tr {
+			&:extend(.animation);
+		}
+
 		tr:hover {
 			background-color: @table-hover;
 		}
@@ -181,6 +201,11 @@ main {
 	vertical-align: middle;
 	margin: 0px 5px;
 	cursor: pointer;
+	&:extend(.animation);
+}
+
+.icon:hover {
+	&:extend(.animation-scale);
 }
 
 .hide {
