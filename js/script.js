@@ -56,7 +56,7 @@ Table.prototype.addNewLineDOM = function (_line) {
 			var text = document.createTextNode(cell.childNodes[i].childNodes[0].value),
 				div = document.createElement('div');
 
-			app.table.lines[app.table.lines.indexOf(_line)].cells[i].content = cell.childNodes[i].childNodes[0].value;
+			_line.cells[i].content = cell.childNodes[i].childNodes[0].value;
 			div.appendChild(text);
 			cell.childNodes[i].replaceChild(div, cell.childNodes[i].childNodes[0]);
 		}
